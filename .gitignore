@@ -129,3 +129,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 /.metadata/
+<<<<<<< HEAD
+=======
+.metadata/
+
+>>>>>>> 7284463a9679ff54c5ca16f511820c355a9af2b4
