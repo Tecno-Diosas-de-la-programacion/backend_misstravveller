@@ -13,7 +13,7 @@ public class States {
 	private UUID id;
 	
 	@Column(name = "state_name", length = 100, nullable =false)
-	private String nombre;
+	private String stateName;
 	
 	//constructor
 	public States() {
@@ -24,7 +24,7 @@ public class States {
 	public States(UUID id, String nombre) {
 		super();
 		this.id = id;
-		this.nombre = nombre;
+		this.stateName = nombre;
 	}
 	
 	//setters and getters
@@ -37,11 +37,11 @@ public class States {
 	}
 
 	public String getNombre() {
-		return nombre;
+		return stateName;
 	}
 
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		this.stateName = nombre;
 	}
 	
 	//String
@@ -51,7 +51,7 @@ public class States {
 		builder.append("States [id=");
 		builder.append(id);
 		builder.append(", nombre=");
-		builder.append(nombre);
+		builder.append(stateName);
 		builder.append("]");
 		return builder.toString();
 	}
