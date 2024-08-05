@@ -1,5 +1,5 @@
 package com.missTravveller.app.repository;
 
-public interface TravelBookingRespository {
+public interface TravelBookingRepository {
 
 }
