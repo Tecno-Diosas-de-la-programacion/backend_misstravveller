@@ -10,7 +10,7 @@ import java.util.*;
 import com.missTravveller.app.model.Itinerary;
 
 @RepositoryRestResource(collectionResourceRel = "itineraries", path = "itineraries")
-public interface ItineraryRepository extends CrudRepository<Itinerary, Long>, PagingAndSortingRepository<Itinerary, Long> {
+public interface ItineraryRepository extends CrudRepository<Itinerary, UUID>, PagingAndSortingRepository<Itinerary, UUID> {
 	
 	List<Itinerary> findByActivity(String activity);
     List<Itinerary> findByMeetingPoint(String meeting_point);
