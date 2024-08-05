@@ -1,5 +1,7 @@
 package com.missTravveller.app.model;
 
+import java.util.UUID;
+
 import jakarta.persistence.*;
 
 
@@ -7,13 +9,9 @@ import jakarta.persistence.*;
 @Table(name="contact_forms")
 public class ContactForm {
 	
-	/*
-	 * @Transient le indica a JPA que id no debe persistir en la base de datos.
-	 * Esto permite que el campo id exista en la clase Java sin afectar la 
-	 * estructura de la tabla en la base de datos.
-	 */
-	@Transient
-	private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.UUID)
+	private UUID id;
 	private String full_name;
 	private String email;
 	private String phone;
@@ -23,21 +21,20 @@ public class ContactForm {
 		
 	}
 
-	public ContactForm(String full_name, String email, String phone, String comments) {
+	public ContactForm(UUID id, String full_name, String email, String phone, String comments) {
 		super();
+		this.id = id;
 		this.full_name = full_name;
 		this.email = email;
 		this.phone = phone;
 		this.comments = comments;
 	}
-	
-	
 
-	public Long getId() {
+	public UUID getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(UUID id) {
 		this.id = id;
 	}
 
@@ -76,7 +73,9 @@ public class ContactForm {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("ContactForm [full_name=");
+		builder.append("ContactForm [id=");
+		builder.append(id);
+		builder.append(", full_name=");
 		builder.append(full_name);
 		builder.append(", email=");
 		builder.append(email);
@@ -87,6 +86,7 @@ public class ContactForm {
 		builder.append("]");
 		return builder.toString();
 	}
+
 	
 	
 }
