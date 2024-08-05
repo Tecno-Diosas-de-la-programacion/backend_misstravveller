@@ -4,11 +4,11 @@ import java.util.*;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
-import com.missTravveller.app.model.States;
+import com.missTravveller.app.model.State;
 
 //revisar
-public interface StatesRepository extends CrudRepository<States, Long>, PagingAndSortingRepository<States, Long> {
+public interface StatesRepository extends CrudRepository<State, Long>, PagingAndSortingRepository<State, Long> {
 	
-	List<States> findAllByStateName(@Param("value") String stateName);
+	List<State> findAllByStateName(@Param("value") String stateName);
 
 }

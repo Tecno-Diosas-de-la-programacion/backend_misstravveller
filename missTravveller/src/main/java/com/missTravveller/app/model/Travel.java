@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name="Travels")
-public class Travels {
+public class Travel {
 
 	//SE ESCRIBE 
 	@Id
@@ -32,12 +32,12 @@ public class Travels {
 	
 	
 	//Constructor vacio SE ESCRIBE
-	public Travels() {
+	public Travel() {
 		
 	}
 
 	// metodo contructor sources>generate contructor using fields> select all
-	public Travels(UUID id, String destination, Double price, String description, Timestamp image, Timestamp traveldate,
+	public Travel(UUID id, String destination, Double price, String description, Timestamp image, Timestamp traveldate,
 			BigInteger quota, int statesid) {
 		super();
 		this.id = id;

@@ -24,8 +24,6 @@ public class User {
 	private String email;
 	@Column(name = "password", length = 100, nullable =false)
 	private String password;
-	@Column(name = "rol", length = 20, nullable =false)
-	private String rol;
 	
 	
 	@ManyToMany
@@ -41,8 +39,7 @@ public class User {
 	}
 	// metodo contructor sources>generate contructor using fields> select all
 	
-	public User(UUID id, String name, String fatherLastName, String motherLastName, String email, String password,
-			String rol, List<Rol> roles) {
+	public User(UUID id, String name, String fatherLastName, String motherLastName, String email, String password, List<Rol> roles) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -50,7 +47,6 @@ public class User {
 		this.motherLastName = motherLastName;
 		this.email = email;
 		this.password = password;
-		this.rol = rol;
 		this.roles = roles;
 	}
 
@@ -105,14 +101,6 @@ public class User {
 		this.password = password;
 	}
 
-	public String getRol() {
-		return rol;
-	}
-
-	public void setRol(String rol) {
-		this.rol = rol;
-	}
-
 	public List<Rol> getRoles() {
 		return roles;
 	}
@@ -138,8 +126,6 @@ public class User {
 		builder.append(email);
 		builder.append(", password=");
 		builder.append(password);
-		builder.append(", rol=");
-		builder.append(rol);
 		builder.append(", roles=");
 		builder.append(roles);
 		builder.append("]");

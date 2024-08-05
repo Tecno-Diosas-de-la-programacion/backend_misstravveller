@@ -45,7 +45,7 @@ public class UserDTOController {
 		return ResponseEntity.ok(existingUser);
 	}
 
-	//
+	//update actualiza con neUserData y rastrea mediante el Id lo que se va a modificar
 	
 	@PutMapping("{id}")
 	ResponseEntity<UserDTO> updateUser(@RequestBody User newUserData, @PathVariable UUID id) {
@@ -53,6 +53,7 @@ public class UserDTOController {
 		return ResponseEntity.ok(updatedUser);
 	}
 	
+	//ratreamos lo que se va a borrar con Id
 	@DeleteMapping("{id}")
 	ResponseEntity<String> deleteUser(@PathVariable UUID id) {
 		userDTOService.deleteUser(id);
