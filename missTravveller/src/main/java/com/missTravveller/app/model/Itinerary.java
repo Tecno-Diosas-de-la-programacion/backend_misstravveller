@@ -1,6 +1,6 @@
 package com.missTravveller.app.model;
 
-import java.util.*;
+
 import java.sql.Timestamp;
 
 import jakarta.persistence.*;
@@ -10,9 +10,9 @@ import jakarta.persistence.*;
 public class Itinerary {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.UUID)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	
-	private UUID id;
+	private Long id;
 	private String activity;
 	private Timestamp start_activity;
 	private Timestamp end_activity;
@@ -23,7 +23,7 @@ public class Itinerary {
 		
 	}
 
-	public Itinerary(UUID id, String activity, Timestamp start_activity, Timestamp end_activity, String meeting_point,
+	public Itinerary(Long id, String activity, Timestamp start_activity, Timestamp end_activity, String meeting_point,
 			String travel) {
 		super();
 		this.id = id;
@@ -34,11 +34,11 @@ public class Itinerary {
 		this.travel = travel;
 	}
 
-	public UUID getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
