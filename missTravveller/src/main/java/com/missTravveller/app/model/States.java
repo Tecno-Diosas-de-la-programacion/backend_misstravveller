@@ -1,16 +1,13 @@
 package com.missTravveller.app.model;
-
-import java.util.UUID;
-
 import jakarta.persistence.*;
 
 @Entity
 @Table(name="states")
 public class States {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
-	private UUID id;
+	@Id 
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
 	
 	@Column(name = "state_name", length = 100, nullable =false)
 	private String stateName;
@@ -21,18 +18,18 @@ public class States {
 	}
 	
 	//constructor using fields
-	public States(UUID id, String nombre) {
+	public States(Long id, String nombre) {
 		super();
 		this.id = id;
 		this.stateName = nombre;
 	}
 	
 	//setters and getters
-	public UUID getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
