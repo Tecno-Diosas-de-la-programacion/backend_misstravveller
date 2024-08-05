@@ -1,5 +1,7 @@
 package com.missTravveller.app.model;
 
+import java.util.UUID;
+
 import jakarta.persistence.*;
 
 
@@ -8,8 +10,8 @@ import jakarta.persistence.*;
 public class Rol {
 	
 	@Id 
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	@GeneratedValue(strategy = GenerationType.UUID)
+	private UUID id;
 	
 	@Column(name="name", length=45, nullable=false)
 	private String name;
@@ -20,25 +22,25 @@ public class Rol {
 	
 	
 
-	public Rol(Long id, String name) {
+	public Rol(UUID id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
 	}
 
-	public static Rol setUserRole(Long roleId) {
-		return new Rol(  (Long) roleId, "");
+	public static Rol setUserRole(UUID roleId) {
+		return new Rol(  (UUID) roleId, "");
 	}
 
 
 
-	public Long getId() {
+	public UUID getId() {
 		return id;
 	}
 
 
 
-	public void setId(Long id) {
+	public void setId(UUID id) {
 		this.id = id;
 	}
 
