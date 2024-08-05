@@ -10,12 +10,7 @@ import com.missTravveller.app.model.Travels;
 
 public interface TravelsRepository extends CrudRepository<Travels, UUID>, PagingAndSortingRepository<Travels, UUID> {
 
-	//revisar 
-	
-	Optional<Travels> findByEmail(String email);	
-	Iterable<Travels> findAllByActiveTrue();
-	Iterable<Travels> findAllByActiveFalse();
-	boolean existsByEmail(String email);
+
 	
 }
 
