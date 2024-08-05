@@ -17,7 +17,7 @@ public class Travels {
 	private UUID id;
 	@Column(name = "number", length = 45, nullable =false)
 	private String destination;
-	@Column(name = "place", length = 100, nullable =false)
+	@Column(name = "destination", length = 100, nullable =false)
 	private Double price;
 	@Column(name = "price", length = 45, nullable =false)
 	private String description;
@@ -25,7 +25,7 @@ public class Travels {
 	private Timestamp image;
 	@Column(name = "image", length = 12, nullable =false)
 	private Timestamp traveldate;
-	@Column(name = "travel_date", length = 12, nullable =false)
+	@Column(name = "traveldate", length = 12, nullable =false)
 	private BigInteger quota;
 	@Column(name = "quota", length = 100, nullable =false, unique=true)
 	private int statesid;
