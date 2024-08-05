@@ -11,7 +11,6 @@ public class Itinerary {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
 	private Long id;
 	private String activity;
 	private Timestamp start_activity;
