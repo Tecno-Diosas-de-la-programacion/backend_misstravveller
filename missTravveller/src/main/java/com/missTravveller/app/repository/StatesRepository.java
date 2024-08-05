@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 import com.missTravveller.app.model.States;
 
 //revisar
-public interface StatesRespository extends CrudRepository<States, Long>, PagingAndSortingRepository<States, Long> {
+public interface StatesRepository extends CrudRepository<States, Long>, PagingAndSortingRepository<States, Long> {
 	
 	List<States> findAllByStateName(@Param("value") String stateName);
 

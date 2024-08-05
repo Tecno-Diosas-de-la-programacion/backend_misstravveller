@@ -16,8 +16,10 @@ public class User {
 	private UUID id;
 	@Column(name = "name", length = 45, nullable =false)
 	private String name;
-	@Column(name = "lastName", length = 45, nullable =false)
-	private String lastName;
+	@Column(name = "fatherLastName", length = 45, nullable =false)
+	private String fatherLastName;
+	@Column(name = "motherLastName", length = 45, nullable =false)
+	private String motherLastName;
 	@Column(name = "email", length = 45, nullable =false, unique=true)
 	private String email;
 	@Column(name = "password", length = 100, nullable =false)
@@ -39,11 +41,13 @@ public class User {
 	}
 	// metodo contructor sources>generate contructor using fields> select all
 	
-	public User(UUID id, String name, String lastName, String email, String password, String rol, List<Rol> roles) {
+	public User(UUID id, String name, String fatherLastName, String motherLastName, String email, String password,
+			String rol, List<Rol> roles) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.lastName = lastName;
+		this.fatherLastName = fatherLastName;
+		this.motherLastName = motherLastName;
 		this.email = email;
 		this.password = password;
 		this.rol = rol;
@@ -52,7 +56,6 @@ public class User {
 
 	
 	//stters y getters
-	
 
 	public UUID getId() {
 		return id;
@@ -70,12 +73,20 @@ public class User {
 		this.name = name;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getFatherLastName() {
+		return fatherLastName;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setFatherLastName(String fatherLastName) {
+		this.fatherLastName = fatherLastName;
+	}
+
+	public String getMotherLastName() {
+		return motherLastName;
+	}
+
+	public void setMotherLastName(String motherLastName) {
+		this.motherLastName = motherLastName;
 	}
 
 	public String getEmail() {
@@ -111,7 +122,7 @@ public class User {
 	}
 
 	//generar con el buffer
-	
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -119,8 +130,10 @@ public class User {
 		builder.append(id);
 		builder.append(", name=");
 		builder.append(name);
-		builder.append(", lastName=");
-		builder.append(lastName);
+		builder.append(", fatherLastName=");
+		builder.append(fatherLastName);
+		builder.append(", motherLastName=");
+		builder.append(motherLastName);
 		builder.append(", email=");
 		builder.append(email);
 		builder.append(", password=");
@@ -132,10 +145,6 @@ public class User {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-
-	
-	
 	
 	
 	

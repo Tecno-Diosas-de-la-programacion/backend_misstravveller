@@ -18,6 +18,7 @@ public interface UserRepository extends CrudRepository<User, UUID>, PagingAndSor
 	Optional<User> findByEmail(@Param("email") String email);	
 	Iterable<User> findByEmailContaining(@Param("email") String email);	
 	boolean existsByEmail(@Param("email") String email);
+	//borar usuario por su rol
 	
 }
 
