@@ -16,14 +16,18 @@ public class Itinerary {
 	private Timestamp start_activity;
 	private Timestamp end_activity;
 	private String meeting_point;
-	private String travel;
+	
+	
+	@ManyToOne
+    @JoinColumn(name = "travel_id", nullable = false)
+    private Travels travel;
 	
 	public Itinerary() {
 		
 	}
 
 	public Itinerary(Long id, String activity, Timestamp start_activity, Timestamp end_activity, String meeting_point,
-			String travel) {
+			Travels travel) {
 		super();
 		this.id = id;
 		this.activity = activity;
@@ -32,6 +36,8 @@ public class Itinerary {
 		this.meeting_point = meeting_point;
 		this.travel = travel;
 	}
+
+
 
 	public Long getId() {
 		return id;
@@ -73,11 +79,11 @@ public class Itinerary {
 		this.meeting_point = meeting_point;
 	}
 
-	public String getTravel() {
+	public Travels getTravel() {
 		return travel;
 	}
 
-	public void setTravel(String travel) {
+	public void setTravel(Travels travel) {
 		this.travel = travel;
 	}
 
@@ -99,7 +105,7 @@ public class Itinerary {
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
 	
 	
 }
