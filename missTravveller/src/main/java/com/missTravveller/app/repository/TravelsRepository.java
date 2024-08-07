@@ -8,18 +8,18 @@ import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.util.*;
 
-import com.missTravveller.app.model.Travels;
+import com.missTravveller.app.model.Travel;
 
 @RepositoryRestResource(collectionResourceRel = "travels", path = "travels")
-public interface TravelsRepository extends CrudRepository<Travels, UUID>, PagingAndSortingRepository<Travels,  UUID> {
+public interface TravelsRepository extends CrudRepository<Travel, UUID>, PagingAndSortingRepository<Travel,  UUID> {
 	
-	List<Travels> findBydestination(String destination);
-    List<Travels> findByprice(Double price);
-    List<Travels> findBydescription(String description);
-    List<Travels> findByimage(Timestamp image);
-    List<Travels> findBytraveldate(Timestamp traveldate);
-    List<Travels> findByquota(BigInteger quota);
-    List<Travels> findBystatesid(int statesid);
+	List<Travel> findBydestination(String destination);
+    List<Travel> findByprice(Double price);
+    List<Travel> findBydescription(String description);
+    List<Travel> findByimage(Timestamp image);
+    List<Travel> findBytraveldate(Timestamp traveldate);
+    List<Travel> findByquota(BigInteger quota);
+    List<Travel> findBystatesid(int statesid);
    
     
 }

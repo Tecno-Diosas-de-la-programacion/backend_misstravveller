@@ -14,7 +14,6 @@ public interface UserDTOService {
 	UserDTO createUser(User user);
 	UserDTO getUserById(UUID id);
 	UserDTO getUserByEmail(String email);
-	Iterable<UserDTO> getAllUser(boolean isActive);
 	UserDTO updateUser(User user, UUID id);
 	void deleteUser(UUID id);
 }

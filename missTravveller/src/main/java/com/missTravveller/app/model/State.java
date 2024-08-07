@@ -3,7 +3,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name="states")
-public class States {
+public class State {
 	
 	@Id 
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -13,12 +13,12 @@ public class States {
 	private String stateName;
 	
 	//constructor
-	public States() {
+	public State() {
 		
 	}
 	
 	//constructor using fields
-	public States(Long id, String nombre) {
+	public State(Long id, String nombre) {
 		super();
 		this.id = id;
 		this.stateName = nombre;
