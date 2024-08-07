@@ -1,5 +1,6 @@
 package com.missTravveller.app.model;
 
+import java.util.List;
 import java.util.UUID;
 
 import jakarta.persistence.*;
@@ -15,7 +16,9 @@ public class Rol {
 	
 	@Column(name="name", length=45, nullable=false)
 	private String name;
-	
+		
+	@ManyToMany(mappedBy = "roles")
+    private List<User> users;
 
 	//metodo vacio
 	public Rol() {}
@@ -54,6 +57,14 @@ public class Rol {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
 
 
 	

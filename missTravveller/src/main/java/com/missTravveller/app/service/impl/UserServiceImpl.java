@@ -1,28 +1,32 @@
 package com.missTravveller.app.service.impl;
 
-import java.util.List;
+
+import java.util.Optional;
 import java.util.UUID;
 
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.missTravveller.app.model.User;
 import com.missTravveller.app.repository.UserRepository;
 import com.missTravveller.app.service.UserService;
+import com.missTravveller.app.util.UserUpdate;
 
 @Service
 public class UserServiceImpl implements UserService {
 
 	//nuestros atributos 
 	UserRepository userRepository;
-	PasswordEncoder passwordEncoder; // esto de la carpeta de security
+	 UserService userService;
+//	PasswordEncoder passwordEncoder; // esto de la carpeta de security
 			
 			
     //nuestro metodo contructor 
 				
-	public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+	public UserServiceImpl(UserRepository userRepository, UserService userService) {
 		this.userRepository = userRepository;
-		this.passwordEncoder = passwordEncoder;
+		this.userService = userService;
+//		this.passwordEncoder = passwordEncoder;
 	}
 
 	@Override
@@ -32,7 +36,7 @@ public class UserServiceImpl implements UserService {
 			throw new IllegalStateException("The email " + email + " is already registered.");
 		}
 		user.setId(null);
-		user.setPassword( passwordEncoder.encode( user.getPassword() ));
+//		user.setPassword( passwordEncoder.encode( user.getPassword() ));
 		User newUser = saveUser(user);
 		return newUser;
 	}
@@ -45,39 +49,43 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public User getUserById(UUID id) {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<User> optionalUser = userRepository.findById(id);
+		if( optionalUser.isEmpty() ) {
+			throw new IllegalStateException("User does not exist with id " + id);
+		}
+		return optionalUser.get();
 	}
 
 	@Override
 	public User getUserByEmail(String email) {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<User> optionalUser = userRepository.findByEmail(email);
+		if( optionalUser.isEmpty() ) {
+			throw new IllegalStateException("User does not exist with email " + email);
+		}
+		return optionalUser.get();
 	}
 
 	@Override
-	public User updateUser(User user, UUID id) {
-		// TODO Auto-generated method stub
-		return null;
+	public User updateUser(User  newUserData, UUID id) {
+
+		User existingUser = getUserById(id);
+		return UserUpdate.updateUser(existingUser, newUserData);
 	}
 
 	@Override
 	public void deleteUser(UUID id) {
-		// TODO Auto-generated method stub
+		User existingUser = getUserById(id);
+		saveUser(existingUser);
 		
 	}
 
-	@Override
-	public User findByEmailAndPassword(String email, String password) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 	@Override
-	public List<User> getAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
+	public Iterable<User> getAllUser() {
+		return  userService.getAllUser();
 	}
+	
 	
 
 }
