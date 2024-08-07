@@ -54,7 +54,9 @@ public class State {
 	}
 	
 	//Relacion con Tabla Travels
-	
+	@OneToMany
+    @JoinColumn(name = "travel_id", nullable = false)
+    private Travel travel;
 	
 	
 
