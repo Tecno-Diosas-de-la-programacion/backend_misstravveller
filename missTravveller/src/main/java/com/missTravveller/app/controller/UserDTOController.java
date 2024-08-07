@@ -11,7 +11,7 @@ import com.missTravveller.app.model.User;
 import com.missTravveller.app.service.UserDTOService;
 
 @RestController //indica que es controller de API REST
-@RequestMapping("api/v1/users") // endpoints
+@RequestMapping("api/v2/users") // endpoints
 @CrossOrigin(origins = "*") //Permite origenes cruzados, de los puertos. 
 public class UserDTOController {
 
@@ -43,6 +43,12 @@ public class UserDTOController {
 	ResponseEntity<UserDTO> getUserById(@PathVariable UUID id) {
 		UserDTO existingUser = userDTOService.getUserById(id);
 		return ResponseEntity.ok(existingUser);
+	}
+	//Obtener todos los usaurios 
+	@GetMapping 
+	ResponseEntity<Iterable<UserDTO>> getAllUsers() {
+		Iterable<UserDTO> existingUsers = userDTOService.getAllUser();
+		return ResponseEntity.ok(existingUsers);
 	}
 
 	//update actualiza con neUserData y rastrea mediante el Id lo que se va a modificar

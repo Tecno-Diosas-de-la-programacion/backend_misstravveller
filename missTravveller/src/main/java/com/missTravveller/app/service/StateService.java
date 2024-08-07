@@ -1,15 +1,15 @@
 package com.missTravveller.app.service;
 
-import com.missTravveller.app.model.States;
+import com.missTravveller.app.model.State;
 
 public interface StateService {
 	
 	//create
-	States createStates (States states);
+	State createStates (State states);
 	//get
-	States getStatesById (Long id);
+	State getStatesById (Long id);
 	//update
-	States updateStates (States states, Long id);
+	State updateStates (State states, Long id);
 	//delete
 	void deleteStates (Long id);
 

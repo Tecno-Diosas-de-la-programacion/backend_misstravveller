@@ -20,14 +20,14 @@ public class Itinerary {
 	
 	@ManyToOne
     @JoinColumn(name = "travel_id", nullable = false)
-    private Travels travel;
+    private Travel travel;
 	
 	public Itinerary() {
 		
 	}
 
 	public Itinerary(Long id, String activity, Timestamp start_activity, Timestamp end_activity, String meeting_point,
-			Travels travel) {
+			Travel travel) {
 		super();
 		this.id = id;
 		this.activity = activity;
@@ -79,11 +79,11 @@ public class Itinerary {
 		this.meeting_point = meeting_point;
 	}
 
-	public Travels getTravel() {
+	public Travel getTravel() {
 		return travel;
 	}
 
-	public void setTravel(Travels travel) {
+	public void setTravel(Travel travel) {
 		this.travel = travel;
 	}
 

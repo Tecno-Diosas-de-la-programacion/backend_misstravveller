@@ -23,7 +23,6 @@ public class Rol {
 	
 
 	public Rol(UUID id, String name) {
-		super();
 		this.id = id;
 		this.name = name;
 	}
