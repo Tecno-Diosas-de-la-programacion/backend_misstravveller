@@ -10,8 +10,8 @@ import java.util.*;
 
 import com.missTravveller.app.model.Travel;
 
-@RepositoryRestResource(collectionResourceRel = "travels", path = "travels")
-public interface TravelsRepository extends CrudRepository<Travel, UUID>, PagingAndSortingRepository<Travel,  UUID> {
+@RepositoryRestResource(collectionResourceRel = "travel", path = "travel")
+public interface TravelRepository extends CrudRepository<Travel, Long>, PagingAndSortingRepository<Travel, Long> {
 	
 	List<Travel> findBydestination(String destination);
     List<Travel> findByprice(Double price);
@@ -19,7 +19,7 @@ public interface TravelsRepository extends CrudRepository<Travel, UUID>, PagingA
     List<Travel> findByimage(Timestamp image);
     List<Travel> findBytraveldate(Timestamp traveldate);
     List<Travel> findByquota(BigInteger quota);
-    List<Travel> findBystatesid(int statesid);
+    //List<Travel> findBystatesid(int statesid);
    
     
 }

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.missTravveller.app.model.States;
+import com.missTravveller.app.model.State;
 import com.missTravveller.app.service.StateService;
 
 
@@ -22,20 +22,20 @@ public class StateController {
 	}
 	
 	@PostMapping
-	ResponseEntity<States>createStates(@RequestBody States states){
-		States newStates = stateService.createStates(states);
+	ResponseEntity<State>createStates(@RequestBody State states){
+		State newStates = stateService.createStates(states);
 		return ResponseEntity.status(201).body(newStates);
 	}
 	
 	@GetMapping("{id}")
-	ResponseEntity<States>getStatesById(@PathVariable Long id){
-		States existingStates = stateService.getStatesById(id);
+	ResponseEntity<State>getStatesById(@PathVariable Long id){
+		State existingStates = stateService.getStatesById(id);
 		return ResponseEntity.ok(existingStates);		
 	}
 	
 	@PutMapping("{id}")
-	ResponseEntity<States>updateStates(@RequestBody States newStatesData, @PathVariable Long id){
-		States updateStates = stateService.updateStates(newStatesData, id);
+	ResponseEntity<State>updateStates(@RequestBody State newStatesData, @PathVariable Long id){
+		State updateStates = stateService.updateStates(newStatesData, id);
 		return ResponseEntity.ok(updateStates);
 	}
 	

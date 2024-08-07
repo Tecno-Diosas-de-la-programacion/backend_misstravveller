@@ -1,5 +1,6 @@
 package com.missTravveller.app.service;
 
+
 import java.util.UUID;
 
 import com.missTravveller.app.dto.UserDTO;
@@ -16,4 +17,6 @@ public interface UserDTOService {
 	UserDTO getUserByEmail(String email);
 	UserDTO updateUser(User user, UUID id);
 	void deleteUser(UUID id);
+	Iterable<UserDTO> getAllUser();
+	
 }
