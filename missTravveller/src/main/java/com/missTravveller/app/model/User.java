@@ -40,7 +40,6 @@ public class User {
 	// metodo contructor sources>generate contructor using fields> select all
 	
 	public User(UUID id, String name, String fatherLastName, String motherLastName, String email, String password, List<Rol> roles) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.fatherLastName = fatherLastName;
@@ -131,7 +130,6 @@ public class User {
 		builder.append("]");
 		return builder.toString();
 	}
-	
 	
 	
 }
