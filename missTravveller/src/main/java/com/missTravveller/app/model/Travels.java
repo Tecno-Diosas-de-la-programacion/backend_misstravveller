@@ -21,14 +21,14 @@ public class Travels {
 	private Double price;
 	@Column(name = "price", length = 45, nullable =false)
 	private String description;
-	@Column(name = "desription", length = 100, nullable =false, unique=true)
+	@Column(name = "description", length = 100, nullable =false, unique=true)
 	private Timestamp image;
 	@Column(name = "image", length = 12, nullable =false)
 	private Timestamp traveldate;
 	@Column(name = "traveldate", length = 12, nullable =false)
 	private BigInteger quota;
-	@Column(name = "quota", length = 100, nullable =false, unique=true)
-	private int statesid;
+	//@Column(name = "quota", length = 100, nullable =false, unique=true)
+	//relacion many to one stateid
 	
 	
 	//Constructor vacio SE ESCRIBE
@@ -47,7 +47,7 @@ public class Travels {
 		this.image = image;
 		this.traveldate = traveldate;
 		this.quota = quota;
-		this.statesid = statesid;
+		//this.statesid = statesid;
 	}
 
 	@Override
@@ -67,8 +67,8 @@ public class Travels {
 		builder.append(traveldate);
 		builder.append(", quota=");
 		builder.append(quota);
-		builder.append(", statesid=");
-		builder.append(statesid);
+		//builder.append(", statesid=");
+		//builder.append(statesid);
 		builder.append("]");
 		return builder.toString();
 	}

@@ -19,9 +19,8 @@ public interface TravelsRepository extends CrudRepository<Travels, UUID>, Paging
     List<Travels> findByimage(Timestamp image);
     List<Travels> findBytraveldate(Timestamp traveldate);
     List<Travels> findByquota(BigInteger quota);
-    List<Travels> findBystatesid(int statesid);
+    //List<Travels> findBystatesid(int statesid);
    
-    
 }
 
 
