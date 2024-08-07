@@ -12,22 +12,26 @@ public class Itinerary {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	@Column(name = "activity", length = 100, nullable =false)
 	private String activity;
+	@Column(name = "start_activity", length = 12, nullable =false)
 	private Timestamp start_activity;
+	@Column(name = "end_activity", length = 12, nullable =false)
 	private Timestamp end_activity;
+	@Column(name = "meeting_point", length = 45, nullable =false)
 	private String meeting_point;
 	
 	
 	@ManyToOne
     @JoinColumn(name = "travel_id", nullable = false)
-    private Travels travel;
+    private Travel travel;
 	
 	public Itinerary() {
 		
 	}
 
 	public Itinerary(Long id, String activity, Timestamp start_activity, Timestamp end_activity, String meeting_point,
-			Travels travel) {
+			Travel travel) {
 		super();
 		this.id = id;
 		this.activity = activity;
@@ -79,11 +83,11 @@ public class Itinerary {
 		this.meeting_point = meeting_point;
 	}
 
-	public Travels getTravel() {
+	public Travel getTravel() {
 		return travel;
 	}
 
-	public void setTravel(Travels travel) {
+	public void setTravel(Travel travel) {
 		this.travel = travel;
 	}
 
