@@ -2,19 +2,18 @@ package com.missTravveller.app.model;
 
 import java.math.BigInteger;
 import java.security.Timestamp;
-import java.util.UUID;
 
 import jakarta.persistence.*;
 
 
 @Entity
-@Table(name="Travels")
+@Table(name="travel")
 public class Travel {
 
 	//SE ESCRIBE 
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
-	private UUID id;
+	private Long id;
 	@Column(name = "number", length = 45, nullable =false)
 	private String destination;
 	@Column(name = "destination", length = 100, nullable =false)
@@ -37,7 +36,7 @@ public class Travel {
 	}
 
 	// metodo contructor sources>generate contructor using fields> select all
-	public Travel(UUID id, String destination, Double price, String description, Timestamp image, Timestamp traveldate,
+	public Travel(Long id, String destination, Double price, String description, Timestamp image, Timestamp traveldate,
 			BigInteger quota, int statesid) {
 		super();
 		this.id = id;
