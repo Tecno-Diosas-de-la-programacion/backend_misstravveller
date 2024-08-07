@@ -80,12 +80,13 @@ public class UserServiceImpl implements UserService {
 	}
 
 
-
 	@Override
-	public Iterable<User> getAllUser() {
-		return  userService.getAllUser();
-	}
-	
+    public Iterable<User> getAllUser() {
+        return userRepository.findAll();  // Llama a findAll() en la instancia del repositorio
+    }
+
+
+
 	
 
 }

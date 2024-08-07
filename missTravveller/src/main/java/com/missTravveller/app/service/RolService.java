@@ -1,15 +1,17 @@
 package com.missTravveller.app.service;
 
 
+import java.util.UUID;
+
 import com.missTravveller.app.model.Rol;
 
 public interface RolService {
 
 	Rol createRol(Rol rol);
-	Rol getRolById(Long id);
+	Rol getRolById(UUID id);
 	Rol getRolByName(String name);
-	Rol updateRol(Rol rol, Long id);
-	void deleteRol(Long id);
+	Rol updateRol(Rol rol, UUID id);
+	void deleteRol(UUID id);
 	Iterable<Rol> getAllRoles();
 	
 	//metodo patch para solo modificar una parte 
