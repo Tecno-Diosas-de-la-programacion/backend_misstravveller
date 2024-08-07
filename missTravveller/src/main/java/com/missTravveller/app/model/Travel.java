@@ -27,8 +27,8 @@ public class Travel {
 	private Timestamp traveldate;
 	@Column(name = "traveldate", length = 12, nullable =false)
 	private BigInteger quota;
-	@Column(name = "quota", length = 100, nullable =false, unique=true)
-	private int statesid;
+	//@Column(name = "quota", length = 100, nullable =false, unique=true)
+	//private int statesid;
 	
 	
 	//Constructor vacio SE ESCRIBE
@@ -47,7 +47,7 @@ public class Travel {
 		this.image = image;
 		this.traveldate = traveldate;
 		this.quota = quota;
-		this.statesid = statesid;
+		//this.statesid = statesid;
 	}
 
 	@Override
@@ -67,8 +67,8 @@ public class Travel {
 		builder.append(traveldate);
 		builder.append(", quota=");
 		builder.append(quota);
-		builder.append(", statesid=");
-		builder.append(statesid);
+		//builder.append(", statesid=");
+		//builder.append(statesid);
 		builder.append("]");
 		return builder.toString();
 	}
