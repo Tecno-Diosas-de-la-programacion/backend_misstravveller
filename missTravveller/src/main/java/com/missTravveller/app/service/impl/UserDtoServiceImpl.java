@@ -1,71 +1,58 @@
 package com.missTravveller.app.service.impl;
 
-import java.util.List;
+
 import java.util.UUID;
 
 
 
 import com.missTravveller.app.dto.UserDTO;
 import com.missTravveller.app.model.User;
-import com.missTravveller.app.repository.UserRepository;
 import com.missTravveller.app.service.UserDTOService;
+import com.missTravveller.app.service.UserService;
+import com.missTravveller.app.util.UserConverter;
 
 public class UserDtoServiceImpl implements UserDTOService{
 
 	//nuestros atributos 
-	UserRepository userRepository;
-	
-	
-	
-	//nuestro metodo contructor 
-	
-	public UserDtoServiceImpl(UserRepository userRepository) {
-		this.userRepository = userRepository;
+	UserService userService;
 
+	
+	public UserDtoServiceImpl(UserService userService) {
+		this.userService = userService;
 	}
 
-	
+
 	@Override
 	public UserDTO createUser(User user) {
-		// TODO Auto-generated method stub
-		return null;
+		User newUser = userService.createUser(user);
+		return UserConverter.userToUserDto(newUser);
 	}
 
 	
 	@Override
 	public UserDTO getUserById(UUID id) {
-		// TODO Auto-generated method stub
-		return null;
+		return UserConverter.userToUserDto( userService.getUserById(id));
 	}
 
 	@Override
 	public UserDTO getUserByEmail(String email) {
-		// TODO Auto-generated method stub
-		return null;
+		return UserConverter.userToUserDto( userService.getUserByEmail(email));
 	}
 
 	@Override
 	public UserDTO updateUser(User user, UUID id) {
-		// TODO Auto-generated method stub
-		return null;
+		return UserConverter.userToUserDto( userService.updateUser(user, id));
 	}
 
 	@Override
 	public void deleteUser(UUID id) {
-		// TODO Auto-generated method stub
-		
+		userService.deleteUser(id);
 	}
 
-	@Override
-	public User findByEmailAndPassword(String email, String password) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
-	public List<UserDTO> getAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
+	public Iterable<UserDTO> getAllUser() {
+		return UserConverter.userToUserDto( userService.getAllUser() );
 	}
 
 }

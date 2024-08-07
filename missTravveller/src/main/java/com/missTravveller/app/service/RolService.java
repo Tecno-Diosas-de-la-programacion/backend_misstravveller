@@ -1,6 +1,5 @@
 package com.missTravveller.app.service;
 
-import java.util.List;
 
 import com.missTravveller.app.model.Rol;
 
@@ -11,7 +10,7 @@ public interface RolService {
 	Rol getRolByName(String name);
 	Rol updateRol(Rol rol, Long id);
 	void deleteRol(Long id);
-	List<Rol> getAllRoles();
+	Iterable<Rol> getAllRoles();
 	
 	//metodo patch para solo modificar una parte 
 	
