@@ -13,7 +13,6 @@ public interface UserService {
 	User getUserByEmail(String email);
 	User updateUser(User user, UUID id);
 	void deleteUser(UUID id);
-	User findByEmailAndPassword(String email ,String password); // PREGUNTAR SI SE PUEDE PORQUE EN DTO NO USAS CONTRASEÑA 
 	Iterable<User> getAllUser();
 
 }

@@ -3,6 +3,7 @@ package com.missTravveller.app.repository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -10,7 +11,7 @@ import java.util.UUID;
 import com.missTravveller.app.model.User;
 
 
-
+@Repository
 public interface UserRepository extends CrudRepository<User, UUID>, PagingAndSortingRepository<User, UUID> {
 
 	//revisar 

@@ -1,4 +1,6 @@
 package com.missTravveller.app.model;
+import java.util.Set;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -54,9 +56,9 @@ public class State {
 	}
 	
 	//Relacion con Tabla Travels
-	@OneToMany
-    @JoinColumn(name = "travel_id", nullable = false)
-    private Travel travel;
+//	@OneToMany
+//    @JoinColumn(name = "travel_id", nullable = false)
+//    private Set<Travel> travel;
 	
 	
 

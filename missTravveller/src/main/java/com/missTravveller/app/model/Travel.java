@@ -12,7 +12,7 @@ public class Travel {
 
 	//SE ESCRIBE 
 	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column(name = "number", length = 45, nullable =false)
 	private String destination;
