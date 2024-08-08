@@ -12,9 +12,13 @@ public class Itinerary {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	@Column(name = "activity", length = 100, nullable =false)
 	private String activity;
+	@Column(name = "start_activity", length = 12, nullable =false)
 	private Timestamp start_activity;
+	@Column(name = "end_activity", length = 12, nullable =false)
 	private Timestamp end_activity;
+	@Column(name = "meeting_point", length = 45, nullable =false)
 	private String meeting_point;
 	
 	

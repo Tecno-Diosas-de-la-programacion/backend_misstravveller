@@ -12,11 +12,10 @@ import com.missTravveller.app.model.Itinerary;
 @RepositoryRestResource(collectionResourceRel = "itineraries", path = "itineraries")
 public interface ItineraryRepository extends CrudRepository<Itinerary, Long>, PagingAndSortingRepository<Itinerary, Long> {
 	
-	List<Itinerary> findByActivity(String activity);
-    List<Itinerary> findByMeetingPoint(String meeting_point);
-    List<Itinerary> findByTravel(String travel);
-    List<Itinerary> findByStartActivity(Timestamp start_activity);
-    List<Itinerary> findByEndActivity(Timestamp end_activity);
+	Optional<Itinerary> findByActivity(String activity);
+    Optional<Itinerary> findByMeetingPoint(String meeting_point);
+    Optional<Itinerary> findByStartActivity(Timestamp start_activity);
+    Optional<Itinerary> findByEndActivity(Timestamp end_activity);
     boolean existsByActivity(String activity);
     
 }
