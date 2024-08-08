@@ -1,5 +1,6 @@
 package com.missTravveller.app.repository;
 
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.data.repository.CrudRepository;
@@ -10,8 +11,8 @@ import com.missTravveller.app.model.ContactForm;
 @RepositoryRestResource(collectionResourceRel = "contact_forms", path = "contact_forms")
 public interface ContactFormRepository extends CrudRepository<ContactForm, UUID> {
 	
-	Iterable<ContactForm> findByEmail(String email);
-    Iterable<ContactForm> findByFullName(String full_name);
-    Iterable<ContactForm> findByPhone(String phone);
+	Optional<ContactForm> findByEmail(String email);
+    Optional<ContactForm> findByFullName(String full_name);
+    Optional<ContactForm> findByPhone(String phone);
     boolean existsByEmail(String email);
 }
