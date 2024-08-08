@@ -13,14 +13,15 @@ import com.missTravveller.app.model.Travel;
 @RepositoryRestResource(collectionResourceRel = "travel", path = "travel")
 public interface TravelRepository extends CrudRepository<Travel, Long>, PagingAndSortingRepository<Travel, Long> {
 	
-	List<Travel> findBydestination(String destination);
-    List<Travel> findByprice(Double price);
-    List<Travel> findBydescription(String description);
-    List<Travel> findByimage(Timestamp image);
-    List<Travel> findBytraveldate(Timestamp traveldate);
-    List<Travel> findByquota(BigInteger quota);
+	Optional<Travel> findBydestination(String destination);
+	Optional<Travel> findByprice(Double price);
+	Optional<Travel> findBydescription(String description);
+	Optional<Travel> findByimage(Timestamp image);
+	Optional<Travel> findBytraveldate(Timestamp traveldate);
+	Optional<Travel> findByquota(BigInteger quota);
     //List<Travel> findBystatesid(int statesid);
    
+    boolean existsByDestination(String destination);
     
 }
 
