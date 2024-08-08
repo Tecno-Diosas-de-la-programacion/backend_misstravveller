@@ -48,6 +48,63 @@ public class Travel {
 		this.quota = quota;
 		//this.statesid = statesid;
 	}
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getDestination() {
+		return destination;
+	}
+
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Timestamp getImage() {
+		return image;
+	}
+
+	public void setImage(Timestamp image) {
+		this.image = image;
+	}
+
+	public Timestamp getTraveldate() {
+		return traveldate;
+	}
+
+	public void setTraveldate(Timestamp traveldate) {
+		this.traveldate = traveldate;
+	}
+
+	public BigInteger getQuota() {
+		return quota;
+	}
+
+	public void setQuota(BigInteger quota) {
+		this.quota = quota;
+	}
+	
 
 	@Override
 	public String toString() {
@@ -71,10 +128,7 @@ public class Travel {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
-	
-	
+
 	
 }
 
