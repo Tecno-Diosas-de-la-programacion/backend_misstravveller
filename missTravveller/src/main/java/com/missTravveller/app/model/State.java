@@ -20,10 +20,10 @@ public class State {
 	}
 	
 	//constructor using fields
-	public State(Long id, String nombre) {
+	public State(Long id, String name) {
 		super();
 		this.id = id;
-		this.stateName = nombre;
+		this.stateName = name;
 	}
 	
 	//setters and getters
@@ -35,12 +35,12 @@ public class State {
 		this.id = id;
 	}
 
-	public String getNombre() {
+	public String getName() {
 		return stateName;
 	}
 
-	public void setNombre(String nombre) {
-		this.stateName = nombre;
+	public void setName(String name) {
+		this.stateName = name;
 	}
 	
 	//String
