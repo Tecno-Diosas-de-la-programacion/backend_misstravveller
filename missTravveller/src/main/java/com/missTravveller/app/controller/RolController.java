@@ -1,5 +1,7 @@
 package com.missTravveller.app.controller;
 
+import java.util.UUID;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -33,13 +35,13 @@ public class RolController {
 	}
 	
 	@GetMapping("{id}")
-	ResponseEntity<Rol> getRolById(@PathVariable("id") Long id){
+	ResponseEntity<Rol> getRolById(@PathVariable UUID id){
 		Rol existingRol = rolService.getRolById(id);
 		return ResponseEntity.ok(existingRol);
 	}
 	
 	@GetMapping("{name}")
-	ResponseEntity<Rol> getRolByName(@PathVariable("name") String name){
+	ResponseEntity<Rol> getRolByName(@PathVariable String name){
 		Rol existingName = rolService.getRolByName(name);
 		return ResponseEntity.ok(existingName);
 	}
@@ -51,13 +53,13 @@ public class RolController {
 	}
 	
 	@PutMapping("{id}")
-	ResponseEntity<Rol> updateRol(@RequestBody Rol newRolData, @PathVariable("id") Long id){
+	ResponseEntity<Rol> updateRol(@RequestBody Rol newRolData, @PathVariable UUID id){
 		Rol updateRol = rolService.updateRol(newRolData, id);
 		return ResponseEntity.ok(updateRol);
 	}
 	
 	@DeleteMapping("{id}")
-	ResponseEntity<String> deleteRol(@PathVariable("id") Long id){
+	ResponseEntity<String> deleteRol(@PathVariable UUID id){
 		rolService.deleteRol(id);
 		return ResponseEntity.status(204).body("User id" + id + "successfully deleted");
 	}
