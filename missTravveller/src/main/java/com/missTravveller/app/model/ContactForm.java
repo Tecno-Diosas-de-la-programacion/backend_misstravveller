@@ -12,7 +12,7 @@ public class ContactForm {
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
 	private UUID id;
-	private String full_name;
+	private String fullName;
 	private String email;
 	private String phone;
 	private String comments;
@@ -21,10 +21,10 @@ public class ContactForm {
 		
 	}
 
-	public ContactForm(UUID id, String full_name, String email, String phone, String comments) {
+	public ContactForm(UUID id, String fullName, String email, String phone, String comments) {
 		super();
 		this.id = id;
-		this.full_name = full_name;
+		this.fullName = fullName;
 		this.email = email;
 		this.phone = phone;
 		this.comments = comments;
@@ -38,12 +38,12 @@ public class ContactForm {
 		this.id = id;
 	}
 
-	public String getFull_name() {
-		return full_name;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setFull_name(String full_name) {
-		this.full_name = full_name;
+	public void setFull_name(String fullName) {
+		this.fullName = fullName;
 	}
 
 	public String getEmail() {
@@ -75,8 +75,8 @@ public class ContactForm {
 		StringBuilder builder = new StringBuilder();
 		builder.append("ContactForm [id=");
 		builder.append(id);
-		builder.append(", full_name=");
-		builder.append(full_name);
+		builder.append(", fullName=");
+		builder.append(fullName);
 		builder.append(", email=");
 		builder.append(email);
 		builder.append(", phone=");

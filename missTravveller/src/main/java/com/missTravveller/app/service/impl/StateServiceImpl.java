@@ -12,18 +12,18 @@ import org.springframework.stereotype.Service;
 public class StateServiceImpl implements StateService {
 	
 	StateRepository stateRepository;
-	StateService stateService;
 	
-	public StateServiceImpl(StateRepository stateRepository, StateService stateService) {
+	
+	public StateServiceImpl(StateRepository stateRepository) {
 		this.stateRepository = stateRepository;
-		this.stateService = stateService;
+		
 	}
 
 	@Override
 	public State createStates(State state) {
-		String name = state.getName();
-		if( stateRepository.existsByName(name) ) {
-			throw new IllegalStateException("The state " + name + " is already registered.");
+		String stateName = state.getStateName();
+		if( stateRepository.existsByStateName(stateName) ) {
+			throw new IllegalStateException("The state " + stateName + " is already registered.");
 		}
 		state.setId(null);
 		State newState = saveState(state);
@@ -55,5 +55,6 @@ public class StateServiceImpl implements StateService {
 		saveState(existingState);
 		
 	}
+	
 
 }

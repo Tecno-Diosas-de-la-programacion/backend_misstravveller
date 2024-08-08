@@ -12,11 +12,11 @@ import com.missTravveller.app.service.ContactFormService;
 public class ContactFormServiceImpl implements ContactFormService{
 
 	ContactFormRepository contactFormRepository;
-	ContactFormService contactFormService;
 	
-	public ContactFormServiceImpl(ContactFormRepository contactFormRepository, ContactFormService contactFormService) {
+	
+	public ContactFormServiceImpl(ContactFormRepository contactFormRepository) {
 		this.contactFormRepository = contactFormRepository;
-		this.contactFormService = contactFormService;
+		
 	}
 
 	@Override
@@ -26,7 +26,6 @@ public class ContactFormServiceImpl implements ContactFormService{
 			throw new IllegalStateException("The email " + email + " is already registered.");
 		}
 		contactForm.setId(null);
-//		user.setPassword( passwordEncoder.encode( user.getPassword() ));
 		ContactForm newContactForm = saveContactForm(contactForm);
 		return newContactForm;
 	}
@@ -45,10 +44,10 @@ public class ContactFormServiceImpl implements ContactFormService{
 	}
 
 	@Override
-	public ContactForm getContactFormByFullName(String full_name) {
-		Optional<ContactForm> optionalContactForm = contactFormRepository.findByFullName(full_name);
+	public ContactForm getContactFormByFullName(String fullName) {
+		Optional<ContactForm> optionalContactForm = contactFormRepository.findByFullName(fullName);
 		if( optionalContactForm.isEmpty() ) {
-			throw new IllegalStateException("Contact form does not exist with full name " + full_name);
+			throw new IllegalStateException("Contact form does not exist with full name " + fullName);
 		}
 		return optionalContactForm.get();
 	}

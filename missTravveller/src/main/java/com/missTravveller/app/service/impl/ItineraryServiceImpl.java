@@ -13,11 +13,11 @@ import com.missTravveller.app.util.ItineraryUpdate;
 public class ItineraryServiceImpl implements ItineraryService {
 	
 	ItineraryRepository itineraryRepository;
-	ItineraryService itineraryService;
 	
-	public ItineraryServiceImpl(ItineraryRepository itineraryRepository, ItineraryService itineraryService) {
+	
+	public ItineraryServiceImpl(ItineraryRepository itineraryRepository) {
 		this.itineraryRepository = itineraryRepository;
-		this.itineraryService = itineraryService;
+		
 	}
 
 	@Override
@@ -55,10 +55,10 @@ public class ItineraryServiceImpl implements ItineraryService {
 	}
 
 	@Override
-	public Itinerary getItineraryByMeetingPoint(String meeting_point) {
-		Optional<Itinerary> optionalItinerary = itineraryRepository.findByMeetingPoint(meeting_point);
+	public Itinerary getItineraryByMeetingPoint(String meetingPoint) {
+		Optional<Itinerary> optionalItinerary = itineraryRepository.findByMeetingPoint(meetingPoint);
 		if( optionalItinerary.isEmpty() ) {
-			throw new IllegalStateException("Itinerary does not exist with meeting point " + meeting_point);
+			throw new IllegalStateException("Itinerary does not exist with meeting point " + meetingPoint);
 		}
 		return optionalItinerary.get();
 	}

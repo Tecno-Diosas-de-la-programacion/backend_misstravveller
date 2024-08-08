@@ -1,5 +1,5 @@
 package com.missTravveller.app.model;
-import java.util.Set;
+
 
 import jakarta.persistence.*;
 
@@ -11,7 +11,7 @@ public class State {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "state_name", length = 100, nullable =false)
+	@Column(name = "stateName", length = 100, nullable =false)
 	private String stateName;
 	
 	//constructor
@@ -20,13 +20,11 @@ public class State {
 	}
 	
 	//constructor using fields
-	public State(Long id, String name) {
-		super();
+	public State(Long id, String stateName) {
 		this.id = id;
-		this.stateName = name;
+		this.stateName = stateName;
 	}
-	
-	//setters and getters
+
 	public Long getId() {
 		return id;
 	}
@@ -35,26 +33,25 @@ public class State {
 		this.id = id;
 	}
 
-	public String getName() {
+	public String getStateName() {
 		return stateName;
 	}
 
-	public void setName(String name) {
-		this.stateName = name;
+	public void setStateName(String stateName) {
+		this.stateName = stateName;
 	}
-	
-	//String
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("States [id=");
+		builder.append("State [id=");
 		builder.append(id);
-		builder.append(", nombre=");
+		builder.append(", stateName=");
 		builder.append(stateName);
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
 	//Relacion con Tabla Travels
 //	@OneToMany
 //    @JoinColumn(name = "travel_id", nullable = false)

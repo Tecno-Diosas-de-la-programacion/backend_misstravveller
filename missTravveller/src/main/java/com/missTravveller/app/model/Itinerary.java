@@ -14,12 +14,12 @@ public class Itinerary {
 	private Long id;
 	@Column(name = "activity", length = 100, nullable =false)
 	private String activity;
-	@Column(name = "start_activity", length = 12, nullable =false)
-	private Timestamp start_activity;
-	@Column(name = "end_activity", length = 12, nullable =false)
-	private Timestamp end_activity;
-	@Column(name = "meeting_point", length = 45, nullable =false)
-	private String meeting_point;
+	@Column(name = "startActivity", length = 12, nullable =false)
+	private Timestamp startActivity;
+	@Column(name = "endActivity", length = 12, nullable =false)
+	private Timestamp endActivity;
+	@Column(name = "meetingPoint", length = 45, nullable =false)
+	private String meetingPoint;
 	
 	
 	@ManyToOne
@@ -30,18 +30,16 @@ public class Itinerary {
 		
 	}
 
-	public Itinerary(Long id, String activity, Timestamp start_activity, Timestamp end_activity, String meeting_point,
+	public Itinerary(Long id, String activity, Timestamp startActivity, Timestamp endActivity, String meetingPoint,
 			Travel travel) {
 		super();
 		this.id = id;
 		this.activity = activity;
-		this.start_activity = start_activity;
-		this.end_activity = end_activity;
-		this.meeting_point = meeting_point;
+		this.startActivity = startActivity;
+		this.endActivity = endActivity;
+		this.meetingPoint = meetingPoint;
 		this.travel = travel;
 	}
-
-
 
 	public Long getId() {
 		return id;
@@ -59,28 +57,28 @@ public class Itinerary {
 		this.activity = activity;
 	}
 
-	public Timestamp getStart_activity() {
-		return start_activity;
+	public Timestamp getStartActivity() {
+		return startActivity;
 	}
 
-	public void setStart_activity(Timestamp start_activity) {
-		this.start_activity = start_activity;
+	public void setStartActivity(Timestamp startActivity) {
+		this.startActivity = startActivity;
 	}
 
-	public Timestamp getEnd_activity() {
-		return end_activity;
+	public Timestamp getEndActivity() {
+		return endActivity;
 	}
 
-	public void setEnd_activity(Timestamp end_activity) {
-		this.end_activity = end_activity;
+	public void setEndActivity(Timestamp endActivity) {
+		this.endActivity = endActivity;
 	}
 
-	public String getMeeting_point() {
-		return meeting_point;
+	public String getMeetingPoint() {
+		return meetingPoint;
 	}
 
-	public void setMeeting_point(String meeting_point) {
-		this.meeting_point = meeting_point;
+	public void setMeetingPoint(String meetingPoint) {
+		this.meetingPoint = meetingPoint;
 	}
 
 	public Travel getTravel() {
@@ -98,17 +96,22 @@ public class Itinerary {
 		builder.append(id);
 		builder.append(", activity=");
 		builder.append(activity);
-		builder.append(", start_activity=");
-		builder.append(start_activity);
-		builder.append(", end_activity=");
-		builder.append(end_activity);
-		builder.append(", meeting_point=");
-		builder.append(meeting_point);
+		builder.append(", startActivity=");
+		builder.append(startActivity);
+		builder.append(", endActivity=");
+		builder.append(endActivity);
+		builder.append(", meetingPoint=");
+		builder.append(meetingPoint);
 		builder.append(", travel=");
 		builder.append(travel);
 		builder.append("]");
 		return builder.toString();
 	}
+
+	
+
+
+
 
 	
 	

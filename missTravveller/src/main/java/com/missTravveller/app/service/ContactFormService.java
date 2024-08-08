@@ -11,7 +11,7 @@ public interface ContactFormService {
 		
 	//Get
 	ContactForm getContactFormById(UUID id);
-	ContactForm getContactFormByFullName(String full_name);
+	ContactForm getContactFormByFullName(String fullName);
 	ContactForm getContactFormByEmail(String email);
 	
 	//Delete

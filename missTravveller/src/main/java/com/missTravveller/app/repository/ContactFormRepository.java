@@ -12,7 +12,7 @@ import com.missTravveller.app.model.ContactForm;
 public interface ContactFormRepository extends CrudRepository<ContactForm, UUID> {
 	
 	Optional<ContactForm> findByEmail(String email);
-    Optional<ContactForm> findByFullName(String full_name);
+    Optional<ContactForm> findByFullName(String fullName);
     Optional<ContactForm> findByPhone(String phone);
     boolean existsByEmail(String email);
 }

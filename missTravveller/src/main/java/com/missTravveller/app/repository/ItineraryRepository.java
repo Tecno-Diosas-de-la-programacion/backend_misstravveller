@@ -13,9 +13,9 @@ import com.missTravveller.app.model.Itinerary;
 public interface ItineraryRepository extends CrudRepository<Itinerary, Long>, PagingAndSortingRepository<Itinerary, Long> {
 	
 	Optional<Itinerary> findByActivity(String activity);
-    Optional<Itinerary> findByMeetingPoint(String meeting_point);
-    Optional<Itinerary> findByStartActivity(Timestamp start_activity);
-    Optional<Itinerary> findByEndActivity(Timestamp end_activity);
+    Optional<Itinerary> findByMeetingPoint(String meetingPoint);
+    Optional<Itinerary> findByStartActivity(Timestamp startActivity);
+    Optional<Itinerary> findByEndActivity(Timestamp endActivity);
     boolean existsByActivity(String activity);
     
 }

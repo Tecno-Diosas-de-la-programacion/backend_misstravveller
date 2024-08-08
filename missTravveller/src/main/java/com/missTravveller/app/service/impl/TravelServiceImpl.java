@@ -14,11 +14,11 @@ import com.missTravveller.app.util.TravelUpdate;
 public class TravelServiceImpl implements TravelService {
 	
 	TravelRepository travelRepository;
-	TravelService travelService;
+	
 
-	public TravelServiceImpl(TravelRepository travelRepository, TravelService travelService) {
+	public TravelServiceImpl(TravelRepository travelRepository) {
 		this.travelRepository = travelRepository;
-		this.travelService = travelService;
+		
 	}
 
 	@Override

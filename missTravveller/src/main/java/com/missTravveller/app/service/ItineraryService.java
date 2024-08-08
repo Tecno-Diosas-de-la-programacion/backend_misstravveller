@@ -9,7 +9,7 @@ public interface ItineraryService {
 	//Get
 	Itinerary getItineraryById(Long id);
 	Itinerary getItineraryByActivity(String activity);
-	Itinerary getItineraryByMeetingPoint(String meeting_point);
+	Itinerary getItineraryByMeetingPoint(String meetingPoint);
 	
 	//Update
 	Itinerary updateItinerary(Itinerary itinerary, Long id);
