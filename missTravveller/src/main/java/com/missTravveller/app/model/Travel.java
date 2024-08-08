@@ -14,17 +14,17 @@ public class Travel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(name = "number", length = 45, nullable =false)
+	@Column(name = "destination", length = 45, nullable =false)
 	private String destination;
-	@Column(name = "destination", length = 100, nullable =false)
+	@Column(name = "price", length = 100, nullable =false)
 	private Double price;
-	@Column(name = "price", length = 45, nullable =false)
+	@Column(name = "description", length = 45, nullable =false)
 	private String description;
-	@Column(name = "desription", length = 100, nullable =false, unique=true)
+	@Column(name = "image", length = 100, nullable =false, unique=true)
 	private Timestamp image;
-	@Column(name = "image", length = 12, nullable =false)
-	private Timestamp traveldate;
 	@Column(name = "traveldate", length = 12, nullable =false)
+	private Timestamp traveldate;
+	@Column(name = "quota", length = 12, nullable =false)
 	private BigInteger quota;
 	//@Column(name = "quota", length = 100, nullable =false, unique=true)
 	//private int statesid;
@@ -34,10 +34,8 @@ public class Travel {
 	public Travel() {
 		
 	}
-
-	// metodo contructor sources>generate contructor using fields> select all
 	public Travel(Long id, String destination, Double price, String description, Timestamp image, Timestamp traveldate,
-			BigInteger quota, int statesid) {
+			BigInteger quota) {
 		super();
 		this.id = id;
 		this.destination = destination;
@@ -46,70 +44,53 @@ public class Travel {
 		this.image = image;
 		this.traveldate = traveldate;
 		this.quota = quota;
-		//this.statesid = statesid;
 	}
-	
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public String getDestination() {
 		return destination;
 	}
-
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
-
 	public Double getPrice() {
 		return price;
 	}
-
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-
 	public String getDescription() {
 		return description;
 	}
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
 	public Timestamp getImage() {
 		return image;
 	}
-
 	public void setImage(Timestamp image) {
 		this.image = image;
 	}
-
 	public Timestamp getTraveldate() {
 		return traveldate;
 	}
-
 	public void setTraveldate(Timestamp traveldate) {
 		this.traveldate = traveldate;
 	}
-
 	public BigInteger getQuota() {
 		return quota;
 	}
-
 	public void setQuota(BigInteger quota) {
 		this.quota = quota;
 	}
-	
-
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Travels [id=");
+		builder.append("Travel [id=");
 		builder.append(id);
 		builder.append(", destination=");
 		builder.append(destination);
@@ -123,12 +104,12 @@ public class Travel {
 		builder.append(traveldate);
 		builder.append(", quota=");
 		builder.append(quota);
-		//builder.append(", statesid=");
-		//builder.append(statesid);
 		builder.append("]");
 		return builder.toString();
 	}
 
+	// metodo contructor sources>generate contructor using fields> select all
+	
 	
 }
 

@@ -3,7 +3,7 @@ package com.missTravveller.app.service.impl;
 
 import java.util.UUID;
 
-
+import org.springframework.stereotype.Service;
 
 import com.missTravveller.app.dto.UserDTO;
 import com.missTravveller.app.model.User;
@@ -11,13 +11,14 @@ import com.missTravveller.app.service.UserDTOService;
 import com.missTravveller.app.service.UserService;
 import com.missTravveller.app.util.UserConverter;
 
-public class UserDtoServiceImpl implements UserDTOService{
+@Service
+public class UserDTOServiceImpl implements UserDTOService{
 
 	//nuestros atributos 
 	UserService userService;
 
 	
-	public UserDtoServiceImpl(UserService userService) {
+	public UserDTOServiceImpl(UserService userService) {
 		this.userService = userService;
 	}
 

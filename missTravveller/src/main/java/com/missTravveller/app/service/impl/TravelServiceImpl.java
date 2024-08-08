@@ -47,7 +47,7 @@ public class TravelServiceImpl implements TravelService {
 
 	@Override
 	public Travel getTravelByDestination(String destination) {
-		Optional<Travel> optionalTravel = travelRepository.findBydestination(destination);
+		Optional<Travel> optionalTravel = travelRepository.findByDestination(destination);
 		if( optionalTravel.isEmpty() ) {
 			throw new IllegalStateException("Travel does not exist with destination " + destination);
 		}
@@ -56,7 +56,7 @@ public class TravelServiceImpl implements TravelService {
 
 	@Override
 	public Travel getTravelByPrice(Double price) {
-		Optional<Travel> optionalTravel = travelRepository.findByprice(price);
+		Optional<Travel> optionalTravel = travelRepository.findByPrice(price);
 		if( optionalTravel.isEmpty() ) {
 			throw new IllegalStateException("Travel does not exist with price " + price);
 		}

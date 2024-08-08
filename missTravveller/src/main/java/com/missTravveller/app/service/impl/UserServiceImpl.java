@@ -17,15 +17,15 @@ public class UserServiceImpl implements UserService {
 
 	//nuestros atributos 
 	UserRepository userRepository;
-	 UserService userService;
+	
 //	PasswordEncoder passwordEncoder; // esto de la carpeta de security
 			
 			
     //nuestro metodo contructor 
 				
-	public UserServiceImpl(UserRepository userRepository, UserService userService) {
+	public UserServiceImpl(UserRepository userRepository) {
 		this.userRepository = userRepository;
-		this.userService = userService;
+		
 //		this.passwordEncoder = passwordEncoder;
 	}
 
