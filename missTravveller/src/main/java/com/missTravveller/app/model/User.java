@@ -33,6 +33,7 @@ public class User {
 			  inverseJoinColumns = @JoinColumn(name = "role_id")) // nombre del atributo
 	private List<Rol> roles;
 	
+	
 	//Constructor vacio SE ESCRIBE
 	public User() {
 		

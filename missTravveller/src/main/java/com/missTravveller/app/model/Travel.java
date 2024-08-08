@@ -2,6 +2,7 @@ package com.missTravveller.app.model;
 
 import java.math.BigInteger;
 import java.security.Timestamp;
+import java.util.List;
 
 import jakarta.persistence.*;
 
@@ -29,7 +30,12 @@ public class Travel {
 	//@Column(name = "quota", length = 100, nullable =false, unique=true)
 	//private int statesid;
 	
-	
+	@ManyToMany
+	@JoinTable(
+			  name = "user_has_roles",        // nombre de la tabla puente
+			  joinColumns = @JoinColumn(name = "user_id"), // nombre del atributo
+			  inverseJoinColumns = @JoinColumn(name = "role_id")) // nombre del atributo
+	private List<Rol> roles;
 	//Constructor vacio SE ESCRIBE
 	public Travel() {
 		
