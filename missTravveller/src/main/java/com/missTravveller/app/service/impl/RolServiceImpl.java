@@ -59,7 +59,7 @@ public class RolServiceImpl implements RolService {
 	@Override
 	public void deleteRol(UUID id) {
 		// TODO Auto-generated method stub
-		//no retorna nada
+		//no retorna nada status 204
 	}
 
 	@Override

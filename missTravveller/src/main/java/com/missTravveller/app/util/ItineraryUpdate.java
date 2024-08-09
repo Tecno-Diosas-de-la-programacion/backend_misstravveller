@@ -11,9 +11,9 @@ public class ItineraryUpdate {
 		}
 		
 		existingItinerary.setActivity(newItineraryData.getActivity());
-		existingItinerary.setStart_activity(newItineraryData.getStart_activity() );
-		existingItinerary.setEnd_activity(newItineraryData.getEnd_activity());
-		existingItinerary.setMeeting_point(newItineraryData.getMeeting_point());
+		existingItinerary.setStartActivity(newItineraryData.getStartActivity() );
+		existingItinerary.setEndActivity(newItineraryData.getEndActivity());
+		existingItinerary.setMeetingPoint(newItineraryData.getMeetingPoint());
 		existingItinerary.setTravel(newItineraryData.getTravel());
 
 

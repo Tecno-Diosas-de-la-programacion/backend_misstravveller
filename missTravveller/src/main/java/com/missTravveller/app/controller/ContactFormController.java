@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.missTravveller.app.model.ContactForm;
+
 import com.missTravveller.app.service.ContactFormService;
 
 @RestController //indica que es controller de API REST
@@ -25,14 +26,22 @@ public class ContactFormController {
 		return ResponseEntity.status(201).body(newContactForm);
 	}
 
+	@GetMapping
+	ResponseEntity<Iterable<ContactForm>> getAllContactForm() {
+		Iterable<ContactForm> existingCF = contactFormService. getAllContactForm();
+		return ResponseEntity.ok(existingCF);
+	}
+
+   
+
 	@GetMapping("{id}")
-	ResponseEntity<ContactForm> getContactFormById(@PathVariable UUID id) {
+	ResponseEntity<ContactForm> getContactFormById(@PathVariable("id") UUID id) {
 		ContactForm existingContactForm = contactFormService.getContactFormById(id);
 		return ResponseEntity.ok(existingContactForm);
 	}
 	
 	@DeleteMapping("{id}")
-	ResponseEntity<String> deleteContactForm(@PathVariable UUID id) {
+	ResponseEntity<String> deleteContactForm(@PathVariable("id") UUID id) {
 		contactFormService.deleteContactForm(id);
 		return ResponseEntity.status(204).body("ContactForm id " + id + " successfully deleted");
 	}

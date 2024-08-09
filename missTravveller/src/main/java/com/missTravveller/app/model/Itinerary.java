@@ -32,7 +32,7 @@ public class Itinerary {
 
 	public Itinerary(Long id, String activity, Timestamp startActivity, Timestamp endActivity, String meetingPoint,
 			Travel travel) {
-		super();
+
 		this.id = id;
 		this.activity = activity;
 		this.startActivity = startActivity;

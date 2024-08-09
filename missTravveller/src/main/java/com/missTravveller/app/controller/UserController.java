@@ -34,35 +34,13 @@ public class UserController {
 		// return new ResponseEntity<User>(newUser, HttpStatus.CREATED);
 	}
 
-	/**
-	 * La anotación @PathVariable en Spring MVC se utiliza para 
-	 * extraer valores de la URL de una solicitud HTTP y vincularlos 
-	 * a los parámetros de un método de controlador. Esto permite que 
-	 * los parámetros dinámicos en la URL se pasen a los métodos del 
-	 * controlador, facilitando la creación de rutas RESTful y 
-	 * permitiendo la captura de valores específicos directamente 
-	 * desde la URL.
-	 * 
-	 * Los valores dinámicos se definen en la URL de la solicitud 
-	 * utilizando llaves {}. Estos valores pueden ser extraídos y 
-	 * utilizados en los métodos del controlador.
-	 */
 	@GetMapping("{id}") // api/v1/users/10
-	ResponseEntity<User> getUserById(@PathVariable("id") UUID id) {
+	ResponseEntity<User> getUserById(@PathVariable UUID id) {
 		User existingUser = userService.getUserById(id);
 		return ResponseEntity.ok(existingUser);
 	}
 
-	/**
-	 * La anotación @RequestParam en Spring MVC se utiliza para 
-	 * extraer parámetros de consulta de una solicitud HTTP y 
-	 * vincularlos a los parámetros de un método del controlador. 
-	 * Los parámetros de consulta son aquellos que se encuentran 
-	 * en la URL después del signo de interrogación ? y suelen 
-	 * utilizarse para pasar datos adicionales en las solicitudes GET.
-	 * 
-	 * 
-	 */
+	
 	@GetMapping
 	ResponseEntity<Iterable<User>> getAllUsers() {
 		Iterable<User> existingUsers = userService.getAllUser();
@@ -77,8 +55,9 @@ public class UserController {
 	
 	@DeleteMapping("{id}")
 	ResponseEntity<String> deleteUser(@PathVariable("id") UUID id) {
-		userService.deleteUser(id);
-		return ResponseEntity.status(204).body("User id " + id + " successfully deleted");
+	    userService.deleteUser(id);
+	    // Responder con 200 OK y un mensaje
+	    return ResponseEntity.ok("User id " + id + " successfully deleted");
 	}
 	
 

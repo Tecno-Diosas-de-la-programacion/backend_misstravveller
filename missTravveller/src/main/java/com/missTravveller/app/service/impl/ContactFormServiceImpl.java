@@ -5,6 +5,7 @@ import java.util.*;
 import org.springframework.stereotype.Service;
 
 import com.missTravveller.app.model.ContactForm;
+
 import com.missTravveller.app.repository.ContactFormRepository;
 import com.missTravveller.app.service.ContactFormService;
 
@@ -65,8 +66,11 @@ public class ContactFormServiceImpl implements ContactFormService{
 	public void deleteContactForm(UUID id) {
 		ContactForm existingContactForm = getContactFormById(id);
 		saveContactForm(existingContactForm);
-		
-		
 	}
+	
+	@Override
+    public Iterable<ContactForm> getAllContactForm() {
+        return contactFormRepository.findAll();  // Llama a findAll() en la instancia del repositorio
+    }
 
 }

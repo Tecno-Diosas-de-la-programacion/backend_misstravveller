@@ -10,7 +10,7 @@ public class StateUpdate {
 			throw new IllegalArgumentException("State data cannot be null");
 		}
 		
-		existingState.setName(newStateData.getName());
+		existingState.setStateName(newStateData.getStateName());
 		return existingState;
 
 

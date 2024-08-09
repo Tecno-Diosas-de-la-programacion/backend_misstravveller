@@ -22,7 +22,7 @@ public class ContactForm {
 	}
 
 	public ContactForm(UUID id, String fullName, String email, String phone, String comments) {
-		super();
+		
 		this.id = id;
 		this.fullName = fullName;
 		this.email = email;

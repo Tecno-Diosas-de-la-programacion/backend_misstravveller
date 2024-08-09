@@ -22,7 +22,8 @@ public class LoginUserServiceImpl implements LoginUserService{
 		public User loginUser(User user) {		
 			Optional<User> optionalUser = userRepository.findByEmail(user.getEmail());		
 			if( optionalUser.isEmpty() || incorrectPassword( user, optionalUser.get() ) ) {
-				throw new IllegalStateException("Incorrect e-mail or password");
+				throw new IllegalStateException("Incorrect e-mail or password"); //saldra como error 500
+				
 			}
 			return optionalUser.get();
 		}

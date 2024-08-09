@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import com.missTravveller.app.model.ContactForm;
 
+
 public interface ContactFormService {
 	
 	//Create
@@ -13,6 +14,7 @@ public interface ContactFormService {
 	ContactForm getContactFormById(UUID id);
 	ContactForm getContactFormByFullName(String fullName);
 	ContactForm getContactFormByEmail(String email);
+	Iterable<ContactForm> getAllContactForm();
 	
 	//Delete
 	void deleteContactForm(UUID id);

@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name="travel")
+@Table(name="travels")
 public class Travel {
 
 	//SE ESCRIBE 
@@ -32,17 +32,24 @@ public class Travel {
 	
 	@ManyToMany
 	@JoinTable(
-			  name = "user_has_roles",        // nombre de la tabla puente
-			  joinColumns = @JoinColumn(name = "user_id"), // nombre del atributo
-			  inverseJoinColumns = @JoinColumn(name = "role_id")) // nombre del atributo
-	private List<Rol> roles;
+			  name = "travel_has_users",        // nombre de la tabla puente
+			  joinColumns = @JoinColumn(name = "travel_id"), // nombre del atributo
+			  inverseJoinColumns = @JoinColumn(name = "user_id")) // nombre del atributo
+	private List<User> users;
+	
+	  // Relación muchos a uno con State
+    @ManyToOne
+    @JoinColumn(name = "state_id")
+    private State state;
+    
 	//Constructor vacio SE ESCRIBE
 	public Travel() {
 		
 	}
+
 	public Travel(Long id, String destination, Double price, String description, Timestamp image, Timestamp traveldate,
-			BigInteger quota) {
-		super();
+			BigInteger quota, List<User> users, State state) {
+		
 		this.id = id;
 		this.destination = destination;
 		this.price = price;
@@ -50,49 +57,82 @@ public class Travel {
 		this.image = image;
 		this.traveldate = traveldate;
 		this.quota = quota;
+		this.users = users;
+		this.state = state;
 	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getDestination() {
 		return destination;
 	}
+
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
+
 	public Double getPrice() {
 		return price;
 	}
+
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	public Timestamp getImage() {
 		return image;
 	}
+
 	public void setImage(Timestamp image) {
 		this.image = image;
 	}
+
 	public Timestamp getTraveldate() {
 		return traveldate;
 	}
+
 	public void setTraveldate(Timestamp traveldate) {
 		this.traveldate = traveldate;
 	}
+
 	public BigInteger getQuota() {
 		return quota;
 	}
+
 	public void setQuota(BigInteger quota) {
 		this.quota = quota;
 	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
+	public State getState() {
+		return state;
+	}
+
+	public void setState(State state) {
+		this.state = state;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -110,9 +150,15 @@ public class Travel {
 		builder.append(traveldate);
 		builder.append(", quota=");
 		builder.append(quota);
+		builder.append(", users=");
+		builder.append(users);
+		builder.append(", state=");
+		builder.append(state);
 		builder.append("]");
 		return builder.toString();
 	}
+
+	
 
 	// metodo contructor sources>generate contructor using fields> select all
 	
