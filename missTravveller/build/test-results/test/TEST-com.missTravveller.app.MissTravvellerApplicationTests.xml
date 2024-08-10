@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.missTravveller.app.MissTravvellerApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-09T17:26:04" hostname="LAPTOP-47L4T0N2" time="1.032">
+<testsuite name="com.missTravveller.app.MissTravvellerApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-09T23:03:56" hostname="LAPTOP-47L4T0N2" time="0.421">
   <properties/>
-  <testcase name="contextLoads()" classname="com.missTravveller.app.MissTravvellerApplicationTests" time="1.032"/>
-  <system-out><![CDATA[11:25:56.426 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.missTravveller.app.MissTravvellerApplicationTests]: MissTravvellerApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-11:25:56.640 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.missTravveller.app.MissTravvellerApplication for test class com.missTravveller.app.MissTravvellerApplicationTests
+  <testcase name="contextLoads()" classname="com.missTravveller.app.MissTravvellerApplicationTests" time="0.421"/>
+  <system-out><![CDATA[17:03:52.290 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.missTravveller.app.MissTravvellerApplicationTests]: MissTravvellerApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:03:52.370 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.missTravveller.app.MissTravvellerApplication for test class com.missTravveller.app.MissTravvellerApplicationTests
  ___      ___   __      ________  ________      ___________  _______        __  ___      ___  ___      ___  _______  ___      ___       _______   _______   
 |"  \    /"  | |" \    /"       )/"       )    ("     _   ")/"      \      /""\|"  \    /"  ||"  \    /"  |/"     "||"  |    |"  |     /"     "| /"      \  
  \   \  //   | ||  |  (:   \___/(:   \___/      )__/  \\__/|:        |    /    \\   \  //  /  \   \  //  /(: ______)||  |    ||  |    (: ______)|:        | 
@@ -22,7 +22,7 @@
                                                                                                                                                             
                                                                                                                                                             
 
-2024-08-09T11:25:57.114-06:00  WARN 4720 --- [missTravveller] [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
+2024-08-09T17:03:52.703-06:00  WARN 9680 --- [missTravveller] [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
 
 Found multiple occurrences of org.json.JSONObject on the class path:
 
@@ -31,35 +31,35 @@ Found multiple occurrences of org.json.JSONObject on the class path:
 
 You may wish to exclude one of them to ensure predictable runtime behavior
 
-2024-08-09T11:25:57.138-06:00  INFO 4720 --- [missTravveller] [    Test worker] c.m.app.MissTravvellerApplicationTests   : Starting MissTravvellerApplicationTests using Java 17.0.11 with PID 4720 (started by vbara in C:\Users\vbara\Miss travveller\backend_misstravveller\missTravveller)
-2024-08-09T11:25:57.139-06:00  INFO 4720 --- [missTravveller] [    Test worker] c.m.app.MissTravvellerApplicationTests   : No active profile set, falling back to 1 default profile: "default"
-2024-08-09T11:25:58.281-06:00  INFO 4720 --- [missTravveller] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-08-09T11:25:58.441-06:00  INFO 4720 --- [missTravveller] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 146 ms. Found 6 JPA repository interfaces.
-2024-08-09T11:25:59.326-06:00  INFO 4720 --- [missTravveller] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-08-09T11:25:59.723-06:00  INFO 4720 --- [missTravveller] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:ed1b71c2-9a81-4014-9a23-6745a59875b2 user=SA
-2024-08-09T11:25:59.727-06:00  INFO 4720 --- [missTravveller] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-08-09T11:25:59.818-06:00  INFO 4720 --- [missTravveller] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-08-09T11:25:59.930-06:00  INFO 4720 --- [missTravveller] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-08-09T11:25:59.998-06:00  INFO 4720 --- [missTravveller] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-08-09T11:26:00.675-06:00  INFO 4720 --- [missTravveller] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-08-09T11:26:02.360-06:00  INFO 4720 --- [missTravveller] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-08-09T11:26:02.377-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:52.721-06:00  INFO 9680 --- [missTravveller] [    Test worker] c.m.app.MissTravvellerApplicationTests   : Starting MissTravvellerApplicationTests using Java 17.0.11 with PID 9680 (started by vbara in C:\Users\vbara\Miss travveller\backend_misstravveller\missTravveller)
+2024-08-09T17:03:52.721-06:00  INFO 9680 --- [missTravveller] [    Test worker] c.m.app.MissTravvellerApplicationTests   : No active profile set, falling back to 1 default profile: "default"
+2024-08-09T17:03:53.350-06:00  INFO 9680 --- [missTravveller] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-09T17:03:53.446-06:00  INFO 9680 --- [missTravveller] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 6 JPA repository interfaces.
+2024-08-09T17:03:53.874-06:00  INFO 9680 --- [missTravveller] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-09T17:03:54.017-06:00  INFO 9680 --- [missTravveller] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db611cc7-565f-4fff-87e5-22dfb492b6a4 user=SA
+2024-08-09T17:03:54.017-06:00  INFO 9680 --- [missTravveller] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-09T17:03:54.066-06:00  INFO 9680 --- [missTravveller] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-09T17:03:54.144-06:00  INFO 9680 --- [missTravveller] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-09T17:03:54.177-06:00  INFO 9680 --- [missTravveller] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-09T17:03:54.463-06:00  INFO 9680 --- [missTravveller] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-09T17:03:55.268-06:00  INFO 9680 --- [missTravveller] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-09T17:03:55.283-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     drop table if exists contact_forms cascade 
-2024-08-09T11:26:02.381-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.283-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     drop table if exists itineraries cascade 
-2024-08-09T11:26:02.382-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.283-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     drop table if exists roles cascade 
-2024-08-09T11:26:02.382-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.283-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     drop table if exists states cascade 
-2024-08-09T11:26:02.383-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.283-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     drop table if exists travel_has_users cascade 
-2024-08-09T11:26:02.383-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.283-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     drop table if exists travels cascade 
-2024-08-09T11:26:02.384-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.283-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     drop table if exists user_has_roles cascade 
-2024-08-09T11:26:02.384-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.283-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     drop table if exists users cascade 
-2024-08-09T11:26:02.391-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.283-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     create table contact_forms (
         id uuid not null,
         comments varchar(255),
@@ -68,7 +68,7 @@ You may wish to exclude one of them to ensure predictable runtime behavior
         phone varchar(255),
         primary key (id)
     )
-2024-08-09T11:26:02.397-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.298-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     create table itineraries (
         end_activity timestamp(6) not null,
         id bigint generated by default as identity,
@@ -78,24 +78,24 @@ You may wish to exclude one of them to ensure predictable runtime behavior
         activity varchar(100) not null,
         primary key (id)
     )
-2024-08-09T11:26:02.403-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.298-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     create table roles (
         id uuid not null,
         name varchar(45) not null,
         primary key (id)
     )
-2024-08-09T11:26:02.405-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.298-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     create table states (
         id bigint generated by default as identity,
         state_name varchar(100) not null,
         primary key (id)
     )
-2024-08-09T11:26:02.406-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.298-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     create table travel_has_users (
         travel_id bigint not null,
         user_id uuid not null
     )
-2024-08-09T11:26:02.407-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.298-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     create table travels (
         price float(53) not null,
         quota numeric(38,0) not null,
@@ -107,12 +107,12 @@ You may wish to exclude one of them to ensure predictable runtime behavior
         image varbinary(100) not null unique,
         primary key (id)
     )
-2024-08-09T11:26:02.409-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.298-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     create table user_has_roles (
         role_id uuid not null,
         user_id uuid not null
     )
-2024-08-09T11:26:02.410-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.298-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     create table users (
         id uuid not null,
         email varchar(45) not null unique,
@@ -122,39 +122,39 @@ You may wish to exclude one of them to ensure predictable runtime behavior
         password varchar(100) not null,
         primary key (id)
     )
-2024-08-09T11:26:02.412-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.298-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     alter table if exists itineraries 
        add constraint FKmsn39r0oxgrs4q82qhd6xr1tx 
        foreign key (travel_id) 
        references travels
-2024-08-09T11:26:02.423-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.314-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     alter table if exists travel_has_users 
        add constraint FK874s9e6hrgrujjn819jbfyts9 
        foreign key (user_id) 
        references users
-2024-08-09T11:26:02.425-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.314-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     alter table if exists travel_has_users 
        add constraint FKkao7okpp9ep75vnvilfkovor7 
        foreign key (travel_id) 
        references travels
-2024-08-09T11:26:02.428-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.314-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     alter table if exists travels 
        add constraint FK7jawkdmkryr3msffte4badqk1 
        foreign key (state_id) 
        references states
-2024-08-09T11:26:02.429-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.314-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     alter table if exists user_has_roles 
        add constraint FK6pf0mfsiq1svs4pwgxgvf0wyl 
        foreign key (role_id) 
        references roles
-2024-08-09T11:26:02.431-06:00 DEBUG 4720 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
+2024-08-09T17:03:55.314-06:00 DEBUG 9680 --- [missTravveller] [    Test worker] org.hibernate.SQL                        : 
     alter table if exists user_has_roles 
        add constraint FKtllbj605lwixu0ty2y8h3baq4 
        foreign key (user_id) 
        references users
-2024-08-09T11:26:02.446-06:00  INFO 4720 --- [missTravveller] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-08-09T11:26:03.156-06:00  WARN 4720 --- [missTravveller] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-08-09T11:26:04.237-06:00  INFO 4720 --- [missTravveller] [    Test worker] c.m.app.MissTravvellerApplicationTests   : Started MissTravvellerApplicationTests in 7.419 seconds (process running for 9.34)
+2024-08-09T17:03:55.314-06:00  INFO 9680 --- [missTravveller] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-09T17:03:55.789-06:00  WARN 9680 --- [missTravveller] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-09T17:03:56.424-06:00  INFO 9680 --- [missTravveller] [    Test worker] c.m.app.MissTravvellerApplicationTests   : Started MissTravvellerApplicationTests in 3.911 seconds (process running for 4.822)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
